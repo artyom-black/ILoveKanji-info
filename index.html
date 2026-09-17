@@ -477,6 +477,10 @@
     }
 
     .submit-btn:hover { background: var(--brand-2); }
+    .submit-btn:disabled {
+      opacity: 0.7;
+      cursor: wait;
+    }
 
     .form-note {
       margin: 10px 0 0;
@@ -711,7 +715,7 @@
         We do <strong>not sell your personal information</strong>. The audited final project does
         not contain an in-app advertising SDK and does not operate an I Love Kanji account or
         cloud-sync service. Information may nevertheless be processed by third-party platform
-        services necessary to operate the App, including Google Firebase Analytics and Google Play Billing.
+        services necessary to operate the App, including Google Firebase Analytics, Google Play Billing, and FormSubmit when you choose to use the website contact form.
       </p>
       <p>
         Information may also be disclosed if reasonably necessary to comply with applicable law,
@@ -785,12 +789,28 @@
         Material changes may also be communicated through the App or store listing when appropriate.
       </p>
 
-      <h3>17. Contact</h3>
+      <h3>17. Contact and support messages</h3>
       <p>
-        For privacy questions, requests, or concerns relating to I Love Kanji, contact us by email.
-        If you email us, we receive the email address you use and the contents of your message so
-        that we can respond. The contact form on this page does not submit data to an I Love Kanji
-        server; it opens Gmail with your message prepared for you to review and send.
+        For privacy questions, requests, or concerns relating to I Love Kanji, you may contact us
+        at the email address below or use the contact form on this legal page.
+      </p>
+      <p>
+        If you use the contact form, the email address you enter, the contents of your message,
+        and basic submission metadata are transmitted to <strong>FormSubmit</strong>, a third-party
+        form-delivery service, so the message can be forwarded to
+        <strong>support.artyomblack@gmail.com</strong>. The form is submitted in the background and
+        does not redirect you to Gmail or another compose screen. FormSubmit states that it retains
+        form submissions for up to 30 days for submission-delivery and archive functionality.
+      </p>
+      <p>
+        We use contact-message information only to receive, review, respond to, and maintain
+        reasonable records of support, legal, or privacy correspondence. Do not include sensitive
+        personal information in a support message unless it is necessary for your request.
+      </p>
+      <p>
+        FormSubmit's own terms and privacy practices apply to its processing of form submissions.
+        You can review its documentation at
+        <a href="https://formsubmit.co/" target="_blank" rel="noopener noreferrer">formsubmit.co</a>.
       </p>
       <div class="contact-card">
         <span class="label">Privacy contact</span>
@@ -1098,10 +1118,11 @@
 
       <h3>13. Third-party services</h3>
       <p>
-        Some App functionality depends on services operated by third parties, including Google Play
-        and Firebase. We do not control those third-party services and are not responsible for
-        outages, policy changes, account restrictions, payment failures, or other issues caused by
-        systems outside our reasonable control.
+        Some App and website functionality depends on services operated by third parties, including
+        Google Play, Firebase, and FormSubmit for delivery of messages submitted through the legal-page
+        contact form. We do not control those third-party services and are not responsible for outages,
+        policy changes, account restrictions, payment failures, delivery failures, or other issues caused
+        by systems outside our reasonable control.
       </p>
 
       <h3>14. Disclaimer of warranties</h3>
@@ -1218,14 +1239,25 @@
           required
         ></textarea>
 
+        <input
+          type="text"
+          id="websiteField"
+          name="_honey"
+          tabindex="-1"
+          autocomplete="off"
+          aria-hidden="true"
+          style="position:absolute;left:-9999px;opacity:0;height:0;width:0;pointer-events:none;"
+        />
         <div class="form-error" id="formError">Enter a valid email address and a message.</div>
 
-        <button class="submit-btn" type="submit">Continue to Gmail</button>
+        <button class="submit-btn" id="submitContact" type="submit">Send Message</button>
         <p class="form-note">
-          For security, this website does not store your email or message. Your browser will open
-          Gmail with the message prepared for <strong>support.artyomblack@gmail.com</strong>;
-          you will review and send it from Gmail.
+          Your email address and message are sent securely through our form-delivery provider
+          and forwarded to <strong>support.artyomblack@gmail.com</strong>. You stay on this page.
         </p>
+        <div id="formSuccess" style="display:none; margin-top:12px; padding:12px 14px; border-radius:10px; background:#ecfdf3; color:#166534; font-size:13px; font-weight:700;">
+          Message sent successfully. We received your request.
+        </div>
       </form>
     </section>
   </div>
@@ -1309,35 +1341,78 @@
         }
       });
 
-      form.addEventListener("submit", (event) => {
+      const submitButton = document.getElementById("submitContact");
+      const success = document.getElementById("formSuccess");
+      const honeypot = document.getElementById("websiteField");
+
+      form.addEventListener("submit", async (event) => {
         event.preventDefault();
 
         const email = emailInput.value.trim();
         const message = messageInput.value.trim();
 
+        error.style.display = "none";
+        success.style.display = "none";
+
         if (!email || !message || !emailInput.checkValidity()) {
+          error.textContent = "Enter a valid email address and a message.";
           error.style.display = "block";
           return;
         }
 
-        error.style.display = "none";
+        // Silently ignore obvious bot submissions.
+        if (honeypot && honeypot.value.trim() !== "") {
+          success.style.display = "block";
+          form.reset();
+          return;
+        }
 
         const currentDocument =
           normalizeHash() === "#terms-of-service" ? "Terms of Service" : "Privacy Policy";
 
-        const subject = "I Love Kanji Support";
-        const body =
-          "Sender email: " + email + "\n" +
-          "Page: " + currentDocument + "\n\n" +
-          "Message:\n" + message;
+        const originalText = submitButton.textContent;
+        submitButton.disabled = true;
+        submitButton.textContent = "Sending...";
 
-        const gmailCompose =
-          "https://mail.google.com/mail/?view=cm&fs=1" +
-          "&to=" + encodeURIComponent("support.artyomblack@gmail.com") +
-          "&su=" + encodeURIComponent(subject) +
-          "&body=" + encodeURIComponent(body);
+        try {
+          const response = await fetch(
+            "https://formsubmit.co/ajax/support.artyomblack@gmail.com",
+            {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+              },
+              body: JSON.stringify({
+                email: email,
+                _replyto: email,
+                _subject: "I Love Kanji Support",
+                page: currentDocument,
+                message: message,
+                _template: "table",
+                _captcha: "false"
+              })
+            }
+          );
 
-        window.open(gmailCompose, "_blank", "noopener,noreferrer");
+          const data = await response.json().catch(() => ({}));
+
+          if (!response.ok || data.success === "false" || data.success === false) {
+            throw new Error(data.message || "Unable to send message.");
+          }
+
+          form.reset();
+          success.textContent = "Message sent successfully. We received your request.";
+          success.style.display = "block";
+        } catch (sendError) {
+          console.error(sendError);
+          error.textContent =
+            "Message could not be sent right now. Please try again or email support.artyomblack@gmail.com.";
+          error.style.display = "block";
+        } finally {
+          submitButton.disabled = false;
+          submitButton.textContent = originalText;
+        }
       });
     })();
   </script>
