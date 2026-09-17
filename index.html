@@ -1,0 +1,1345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0f172a" />
+  <meta
+    name="description"
+    content="Official Privacy Policy and Terms of Service for the I Love Kanji mobile application."
+  />
+  <title>I Love Kanji — Privacy Policy</title>
+
+  <style>
+    :root {
+      --bg: #f7f8fb;
+      --surface: #ffffff;
+      --surface-soft: #f1f4f8;
+      --text: #111827;
+      --text-soft: #4b5563;
+      --text-faint: #6b7280;
+      --border: #e5e7eb;
+      --brand: #0f172a;
+      --brand-2: #1e293b;
+      --radius-lg: 22px;
+      --radius-md: 14px;
+      --shadow: 0 18px 55px rgba(15, 23, 42, 0.08);
+      --max: 980px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--bg);
+    }
+
+    body {
+      margin: 0;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top right, rgba(15, 23, 42, 0.055), transparent 32rem),
+        var(--bg);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.72;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a {
+      color: #1d4ed8;
+      text-underline-offset: 3px;
+    }
+
+    a:hover { text-decoration-thickness: 2px; }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 60;
+      border-bottom: 1px solid rgba(229, 231, 235, 0.9);
+      background: rgba(247, 248, 251, 0.92);
+      backdrop-filter: blur(16px);
+    }
+
+    .header-inner {
+      width: min(var(--max), calc(100% - 32px));
+      min-height: 74px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .brand {
+      color: var(--brand);
+      font-size: 18px;
+      font-weight: 850;
+      letter-spacing: -0.025em;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .nav {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding-right: 92px;
+    }
+
+    .nav-link {
+      color: var(--text-soft);
+      text-decoration: none;
+      font-weight: 750;
+      font-size: 14px;
+      padding: 10px 13px;
+      border-radius: 11px;
+      transition: 160ms ease;
+      white-space: nowrap;
+    }
+
+    .nav-link:hover {
+      background: #edf0f4;
+      color: var(--text);
+    }
+
+    .nav-link.active {
+      color: white;
+      background: var(--brand);
+    }
+
+    .chat-trigger {
+      position: fixed;
+      top: 15px;
+      right: 18px;
+      z-index: 100;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      min-height: 44px;
+      padding: 0 16px;
+      border: 0;
+      border-radius: 999px;
+      color: white;
+      background: var(--brand);
+      box-shadow: 0 10px 28px rgba(15, 23, 42, 0.22);
+      font: inherit;
+      font-size: 14px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: transform 150ms ease, background 150ms ease;
+    }
+
+    .chat-trigger:hover {
+      background: var(--brand-2);
+      transform: translateY(-1px);
+    }
+
+    .page {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 38px auto 64px;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 22px;
+      padding: clamp(28px, 6vw, 54px);
+      border-radius: var(--radius-lg);
+      color: white;
+      background:
+        radial-gradient(circle at 92% 12%, rgba(255,255,255,0.14), transparent 17rem),
+        linear-gradient(135deg, #0b1220 0%, #172033 60%, #29364f 100%);
+      box-shadow: var(--shadow);
+    }
+
+    .eyebrow {
+      margin: 0 0 10px;
+      color: rgba(255,255,255,0.67);
+      font-size: 12px;
+      font-weight: 850;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      max-width: 760px;
+      margin: 0;
+      font-size: clamp(34px, 6vw, 56px);
+      line-height: 1.04;
+      letter-spacing: -0.045em;
+    }
+
+    .hero p {
+      max-width: 720px;
+      margin: 16px 0 0;
+      color: rgba(255,255,255,0.76);
+      font-size: 16px;
+    }
+
+    .doc {
+      display: none;
+      padding: clamp(26px, 5vw, 52px);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    .doc.active { display: block; }
+
+    .doc-header {
+      padding-bottom: 25px;
+      margin-bottom: 28px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .doc h2 {
+      margin: 0 0 8px;
+      font-size: clamp(30px, 4vw, 42px);
+      line-height: 1.12;
+      letter-spacing: -0.035em;
+    }
+
+    .updated {
+      color: var(--text-faint);
+      font-size: 13px;
+      font-weight: 650;
+    }
+
+    .lead {
+      margin: 20px 0 0;
+      color: var(--text-soft);
+      font-size: 17px;
+    }
+
+    .summary-card {
+      margin: 26px 0 34px;
+      padding: 20px 22px;
+      border: 1px solid #dce2ea;
+      border-radius: var(--radius-md);
+      background: var(--surface-soft);
+    }
+
+    .summary-card strong {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--text);
+    }
+
+    .summary-card p {
+      margin: 0;
+      color: var(--text-soft);
+    }
+
+    h3 {
+      margin: 34px 0 10px;
+      color: var(--text);
+      font-size: 20px;
+      line-height: 1.35;
+      letter-spacing: -0.015em;
+    }
+
+    p {
+      margin: 11px 0;
+      color: #374151;
+    }
+
+    ul {
+      margin: 12px 0;
+      padding-left: 24px;
+    }
+
+    li {
+      margin: 8px 0;
+      color: #374151;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      margin: 18px 0 28px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+    }
+
+    table {
+      width: 100%;
+      min-width: 700px;
+      border-collapse: collapse;
+      background: white;
+    }
+
+    th, td {
+      padding: 15px 16px;
+      text-align: left;
+      vertical-align: top;
+      border-bottom: 1px solid var(--border);
+    }
+
+    th {
+      color: var(--text);
+      background: #f8fafc;
+      font-size: 13px;
+      letter-spacing: 0.01em;
+    }
+
+    td {
+      color: #374151;
+      font-size: 14px;
+    }
+
+    tr:last-child td { border-bottom: 0; }
+
+    .callout {
+      margin: 28px 0;
+      padding: 17px 19px;
+      border-left: 4px solid var(--brand);
+      border-radius: 0 12px 12px 0;
+      background: #f8fafc;
+    }
+
+    .callout p { margin: 0; }
+
+    .license-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .license-item {
+      padding: 16px 17px;
+      border: 1px solid var(--border);
+      border-radius: 13px;
+      background: #fbfcfe;
+    }
+
+    .license-item strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .license-item p {
+      margin: 4px 0;
+      font-size: 14px;
+    }
+
+    .contact-card {
+      margin-top: 30px;
+      padding: 20px 22px;
+      border-radius: var(--radius-md);
+      color: white;
+      background: var(--brand);
+    }
+
+    .contact-card .label {
+      display: block;
+      margin-bottom: 4px;
+      color: rgba(255,255,255,0.64);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .contact-card a {
+      color: white;
+      font-size: 17px;
+      font-weight: 800;
+      word-break: break-all;
+    }
+
+    .fine-print {
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      color: var(--text-faint);
+      font-size: 12px;
+    }
+
+    footer {
+      padding: 22px 8px 0;
+      color: var(--text-faint);
+      text-align: center;
+      font-size: 12px;
+    }
+
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 150;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background: rgba(6, 10, 18, 0.64);
+      backdrop-filter: blur(6px);
+    }
+
+    .modal-backdrop.open { display: flex; }
+
+    .modal {
+      width: min(520px, 100%);
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 20px;
+      background: white;
+      box-shadow: 0 30px 90px rgba(0,0,0,0.32);
+    }
+
+    .modal-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 22px 24px 14px;
+    }
+
+    .modal-top h3 {
+      margin: 0;
+      font-size: 24px;
+    }
+
+    .modal-top p {
+      margin: 4px 0 0;
+      color: var(--text-faint);
+      font-size: 13px;
+    }
+
+    .modal-close {
+      flex: 0 0 auto;
+      width: 38px;
+      height: 38px;
+      border: 0;
+      border-radius: 10px;
+      color: #475569;
+      background: #f1f5f9;
+      font-size: 23px;
+      line-height: 1;
+      cursor: pointer;
+    }
+
+    .modal-form {
+      padding: 2px 24px 24px;
+    }
+
+    label {
+      display: block;
+      margin: 14px 0 7px;
+      color: var(--text);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    input, textarea {
+      width: 100%;
+      border: 1px solid #d6dae1;
+      border-radius: 12px;
+      color: var(--text);
+      background: white;
+      padding: 13px 14px;
+      outline: 0;
+      font: inherit;
+      transition: border-color 150ms ease, box-shadow 150ms ease;
+    }
+
+    input:focus, textarea:focus {
+      border-color: #64748b;
+      box-shadow: 0 0 0 3px rgba(100,116,139,0.12);
+    }
+
+    textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    .form-error {
+      display: none;
+      margin-top: 10px;
+      color: #b42318;
+      font-size: 13px;
+      font-weight: 650;
+    }
+
+    .submit-btn {
+      width: 100%;
+      margin-top: 18px;
+      border: 0;
+      border-radius: 12px;
+      color: white;
+      background: var(--brand);
+      padding: 14px 16px;
+      font: inherit;
+      font-weight: 850;
+      cursor: pointer;
+    }
+
+    .submit-btn:hover { background: var(--brand-2); }
+
+    .form-note {
+      margin: 10px 0 0;
+      color: var(--text-faint);
+      font-size: 11px;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 720px) {
+      .header-inner {
+        min-height: auto;
+        padding: 14px 0;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav {
+        width: 100%;
+        margin: 0;
+        gap: 5px;
+        overflow-x: auto;
+        padding-right: 88px;
+        scrollbar-width: none;
+      }
+
+      .nav::-webkit-scrollbar { display: none; }
+
+      .chat-trigger {
+        top: 11px;
+        right: 10px;
+        min-height: 40px;
+        padding: 0 13px;
+      }
+
+      .page { margin-top: 24px; }
+
+      .hero { border-radius: 18px; }
+      .doc { border-radius: 18px; }
+
+      .contact-card a { font-size: 15px; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#privacy-policy" aria-label="I Love Kanji legal home">I Love Kanji</a>
+
+      <nav class="nav" aria-label="Legal documents">
+        <a class="nav-link" id="privacyNav" href="#privacy-policy">Privacy Policy</a>
+        <a class="nav-link" id="termsNav" href="#terms-of-service">Terms of Service</a>
+      </nav>
+    </div>
+  </header>
+
+  <button class="chat-trigger" id="openChat" type="button" aria-label="Contact support">
+    <span aria-hidden="true">💬</span>
+    <span>Chat</span>
+  </button>
+
+  <main class="page">
+    <section class="hero" aria-label="I Love Kanji legal information">
+      <p class="eyebrow">Official legal information</p>
+      <h1>Privacy & Terms for I Love Kanji</h1>
+      <p>
+        These documents explain how the I Love Kanji mobile application handles data,
+        purchases, licensed content, and the conditions that apply when you use the app.
+      </p>
+    </section>
+
+    <!-- PRIVACY POLICY -->
+    <article class="doc" id="privacyPanel" aria-labelledby="privacyTitle">
+      <header class="doc-header">
+        <h2 id="privacyTitle">Privacy Policy</h2>
+        <div class="updated">Effective and last updated: September 17, 2026</div>
+        <p class="lead">
+          This Privacy Policy describes how the developer of <strong>I Love Kanji</strong>
+          ("I Love Kanji," "we," "us," or "our") handles information in connection with the
+          I Love Kanji mobile application (the "App").
+        </p>
+      </header>
+
+      <div class="summary-card">
+        <strong>Privacy at a glance</strong>
+        <p>
+          I Love Kanji does not require an in-app account and does not use an advertising SDK.
+          Learning progress, saved stories, review state, streaks, settings, and the local purchase
+          receipt are stored on your device. The App uses Google Firebase Analytics for usage
+          analytics and Google Play Billing for the optional one-time N4–N1 unlock. The App does
+          not intentionally send the text of your personal kanji stories to Firebase Analytics,
+          and we do not sell your personal information.
+        </p>
+      </div>
+
+      <h3>1. Scope</h3>
+      <p>
+        This Privacy Policy applies to information handled through the App. It does not control
+        the independent privacy practices of Google, device manufacturers, app stores, operating
+        systems, or other third-party services that may be used in connection with the App.
+      </p>
+
+      <h3>2. Information handled by the App</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>Examples</th>
+              <th>How it is used</th>
+              <th>Where it is handled</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Learning data</td>
+              <td>Progress, review status, streaks, daily settings, lesson state</td>
+              <td>To provide the App's learning and review features</td>
+              <td>Primarily on your device</td>
+            </tr>
+            <tr>
+              <td>User-created stories</td>
+              <td>Stories or mnemonic text you write for kanji</td>
+              <td>To personalize your learning experience</td>
+              <td>Designed to remain on your device; not intentionally sent as Firebase Analytics event content</td>
+            </tr>
+            <tr>
+              <td>Analytics and technical data</td>
+              <td>App interactions, sessions, device/app information, analytics identifiers, events</td>
+              <td>To understand usage, diagnose problems, and improve the App</td>
+              <td>Processed through Google Firebase Analytics when enabled in the App</td>
+            </tr>
+            <tr>
+              <td>Purchase information</td>
+              <td>Product entitlement, purchase state, purchase token, acknowledgement status, and transaction-related information made available by Google Play</td>
+              <td>To complete, verify, acknowledge, restore, and manage the optional one-time N4–N1 unlock</td>
+              <td>Processed through Google Play; a purchase receipt is also stored locally on your device</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>3. Local learning data and stories</h3>
+      <p>
+        The App is designed to store core learning information locally on your device.
+        This may include your kanji progress, review history, saved stories, streak state,
+        preferences, and similar learning-related settings.
+      </p>
+      <p>
+        We do not intentionally transmit the text of your personal kanji stories to Firebase
+        Analytics. If the App's architecture changes in the future so that such content is
+        transmitted to a server or cloud service, this Privacy Policy will be updated accordingly.
+      </p>
+
+      <h3>4. Firebase Analytics</h3>
+      <p>
+        The App may use <strong>Google Firebase Analytics</strong> to measure general use of the
+        App and help improve stability, usability, and features. Firebase Analytics may automatically
+        process technical and usage information such as app interactions, session information,
+        device or app characteristics, and analytics identifiers.
+      </p>
+      <p>
+        We use analytics for legitimate product purposes such as understanding feature usage,
+        identifying errors or friction, and improving the App. The current App logs event names
+        for items such as level starts/completions, selected N5 learning milestones, notification
+        permission results, whether a suggested or personal story was used (without sending the
+        story text), story skips, and purchase-flow status. The App code does not set your email
+        address, name, or a custom I Love Kanji account identifier as a Firebase Analytics user ID.
+      </p>
+      <p>
+        Firebase Analytics also automatically logs certain events and technical information,
+        such as first open, sessions, engagement, app/device information, analytics installation
+        identifiers, and supported Google Play purchase events, subject to Google's SDK behavior
+        and configuration.
+      </p>
+      <p>
+        Firebase and Google process information under their own terms and privacy documentation.
+        You can learn more from
+        <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">Firebase Privacy and Security</a>
+        and the
+        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy Policy</a>.
+      </p>
+
+      <h3>5. Purchases and Google Play Billing</h3>
+      <p>
+        The App may offer a one-time paid unlock for additional learning content through
+        <strong>Google Play Billing</strong>. Google Play processes the payment transaction.
+        We do not receive or store your complete payment-card number, bank-account credentials,
+        or other full payment credentials.
+      </p>
+      <p>
+        Google Play may make purchase-status or entitlement information available to the App so
+        that paid access can be granted or restored. Google's processing of payment and account
+        information is governed by Google's own terms and privacy policies.
+      </p>
+
+      <h3>6. Notifications and device features</h3>
+      <p>
+        The App may request Android notification permission so it can schedule local learning
+        reminders while the day's required learning remains incomplete. The reminder system can
+        also respond to device restart, time changes, timezone changes, and app updates so local
+        reminders can be restored or adjusted. These reminders are generated on the device rather
+        than through an I Love Kanji cloud-messaging account.
+      </p>
+      <p>
+        You can disable notifications through your device settings. The App also uses device
+        vibration for learning feedback, including incorrect-answer and completion feedback.
+        These device features do not require the App to access your contacts, microphone, camera,
+        messages, or precise location.
+      </p>
+
+      <h3>7. Data we do not intentionally request for normal App use</h3>
+      <p>
+        The App does not require you to create an I Love Kanji account and does not intentionally
+        request access to your contacts, call logs, SMS messages, microphone, camera, or precise
+        location for its normal kanji-learning functionality.
+      </p>
+
+      <h3>8. How information is used</h3>
+      <p>Information described in this Policy may be used to:</p>
+      <ul>
+        <li>provide lessons, reviews, streaks, progress tracking, audio, and related App functionality;</li>
+        <li>remember your settings and learning state on your device;</li>
+        <li>process or restore purchased access through Google Play;</li>
+        <li>measure App usage and improve performance, usability, and features;</li>
+        <li>detect, investigate, or address technical problems, abuse, or security issues; and</li>
+        <li>comply with applicable legal obligations when required.</li>
+      </ul>
+
+      <h3>9. Sharing and disclosure</h3>
+      <p>
+        We do <strong>not sell your personal information</strong>. The audited final project does
+        not contain an in-app advertising SDK and does not operate an I Love Kanji account or
+        cloud-sync service. Information may nevertheless be processed by third-party platform
+        services necessary to operate the App, including Google Firebase Analytics and Google Play Billing.
+      </p>
+      <p>
+        Information may also be disclosed if reasonably necessary to comply with applicable law,
+        lawful process, or enforceable governmental requests, or to protect legal rights, safety,
+        security, or the integrity of the App.
+      </p>
+
+      <h3>10. Data retention and deletion</h3>
+      <p>
+        Local App data generally remains on your device until you clear the App's storage,
+        reset relevant App data, or uninstall the App, subject to your operating system and any
+        device-level backup or restore features.
+      </p>
+      <p>
+        Data processed by third-party services such as Firebase Analytics or Google Play is retained
+        according to those providers' applicable settings, retention periods, and policies.
+      </p>
+      <div class="callout">
+        <p>
+          Because I Love Kanji does not require its own user account, there is no separate
+          I Love Kanji account-deletion process. To remove locally stored learning data, you can
+          clear the App's storage or uninstall the App. For privacy questions, contact us at the
+          email listed below.
+        </p>
+      </div>
+
+      <h3>11. Your privacy choices and rights</h3>
+      <p>
+        Depending on where you live, privacy law may provide rights concerning personal information,
+        such as rights to request access, correction, deletion, restriction, or information about
+        processing. These rights are subject to applicable legal requirements and exceptions.
+      </p>
+      <p>
+        Because the App does not use its own user account system, some analytics information may not
+        be reasonably identifiable by us as belonging to a particular individual. We will nevertheless
+        respond to legitimate privacy inquiries as required by applicable law.
+      </p>
+
+      <h3>12. Security</h3>
+      <p>
+        We use reasonable safeguards appropriate to the nature of the App and the information handled.
+        However, no mobile application, storage system, network transmission, or third-party service
+        can be guaranteed to be completely secure. You use the App with this inherent limitation in mind.
+      </p>
+
+      <h3>13. International processing</h3>
+      <p>
+        Third-party service providers used by the App may process information in countries other than
+        the country where you live. Their processing is governed by their own privacy practices and
+        applicable legal safeguards.
+      </p>
+
+      <h3>14. Children's privacy</h3>
+      <p>
+        The App does not require users to provide a name, email address, or in-app account to use its
+        core learning features. We do not knowingly use the App to solicit personal information directly
+        from children. Parents or guardians who believe that a privacy issue involving a child has occurred
+        may contact us using the email below.
+      </p>
+
+      <h3>15. Third-party links and services</h3>
+      <p>
+        The App or this legal page may contain links to third-party websites or services. We are not
+        responsible for the content, security, or privacy practices of those third parties.
+      </p>
+
+      <h3>16. Changes to this Privacy Policy</h3>
+      <p>
+        We may revise this Privacy Policy when the App, its services, or applicable requirements change.
+        The revised Policy will be posted at this page and the "last updated" date will be changed.
+        Material changes may also be communicated through the App or store listing when appropriate.
+      </p>
+
+      <h3>17. Contact</h3>
+      <p>
+        For privacy questions, requests, or concerns relating to I Love Kanji, contact us by email.
+        If you email us, we receive the email address you use and the contents of your message so
+        that we can respond. The contact form on this page does not submit data to an I Love Kanji
+        server; it opens Gmail with your message prepared for you to review and send.
+      </p>
+      <div class="contact-card">
+        <span class="label">Privacy contact</span>
+        <a href="mailto:support.artyomblack@gmail.com">support.artyomblack@gmail.com</a>
+      </div>
+
+      <p class="fine-print">
+        This Privacy Policy is intended to accurately describe the App's current data practices.
+        It is not a substitute for legal advice tailored to a specific jurisdiction or business structure.
+      </p>
+    </article>
+
+    <!-- TERMS OF SERVICE -->
+    <article class="doc" id="termsPanel" aria-labelledby="termsTitle">
+      <header class="doc-header">
+        <h2 id="termsTitle">Terms of Service</h2>
+        <div class="updated">Effective and last updated: September 17, 2026</div>
+        <p class="lead">
+          These Terms of Service ("Terms") govern your access to and use of the
+          <strong>I Love Kanji</strong> mobile application (the "App"). By downloading,
+          accessing, purchasing through, or using the App, you agree to these Terms.
+        </p>
+      </header>
+
+      <div class="summary-card">
+        <strong>Important</strong>
+        <p>
+          I Love Kanji is an educational kanji-learning tool. Some features may be free and
+          additional content may be unlocked through a one-time Google Play purchase.
+          The App includes certain third-party materials used under their respective licenses.
+        </p>
+      </div>
+
+      <h3>1. Eligibility and acceptance</h3>
+      <p>
+        You may use the App only if you are legally permitted to do so under the laws that apply to you.
+        If you are not legally able to agree to these Terms on your own, a parent or legal guardian
+        must review and accept them on your behalf where required.
+      </p>
+
+      <h3>2. Educational purpose</h3>
+      <p>
+        I Love Kanji is provided as a language-learning and study tool. It is designed to help users
+        learn and review Japanese kanji through stories, audio, recall exercises, progress tracking,
+        and spaced-repetition techniques.
+      </p>
+      <p>
+        Educational content may contain mistakes, omissions, variant readings, context-dependent
+        meanings, pronunciation differences, or other imperfections. You should not treat the App
+        as an official examination authority, certified translation service, or guaranteed source
+        of linguistic accuracy.
+      </p>
+
+      <h3>3. License to use the App</h3>
+      <p>
+        Subject to these Terms and any applicable app-store rules, you are granted a limited,
+        non-exclusive, non-transferable, non-sublicensable, revocable license to install and use
+        the App for your personal, lawful purposes.
+      </p>
+      <p>
+        This license does not transfer ownership of the App or any proprietary content to you.
+        Rights not expressly granted are reserved.
+      </p>
+
+      <h3>4. User-created stories and content</h3>
+      <p>
+        The App may allow you to write and save your own stories or mnemonic text. You remain
+        responsible for the content you create. The App is designed to keep this content locally
+        on your device, and we do not claim ownership of your original story text.
+      </p>
+      <p>
+        You must not use the App to create or use content in a way that violates applicable law
+        or the intellectual-property, privacy, or other rights of another person.
+      </p>
+
+      <h3>5. Purchases</h3>
+      <p>
+        The App may offer a <strong>one-time purchase</strong> that unlocks additional kanji-learning
+        content or features. Unless the purchase screen expressly states otherwise, this is not a
+        recurring subscription.
+      </p>
+      <p>
+        Purchases are processed through Google Play Billing and are also subject to the applicable
+        Google Play terms, payment rules, regional requirements, and refund policies. Prices,
+        taxes, currency conversion, payment authorization, and transaction processing are controlled
+        by Google Play or the relevant platform.
+      </p>
+      <p>
+        A successful purchase grants the digital entitlement described on the purchase screen.
+        You are responsible for using the Google account and device environment necessary for
+        Google Play to recognize or restore that entitlement.
+      </p>
+
+      <h3>6. Restoring purchases</h3>
+      <p>
+        Where supported, the App may attempt to restore previously purchased access using purchase
+        information made available by Google Play. Restoration may depend on the Google account
+        used for the original purchase, Google Play records, network availability, platform behavior,
+        and continued availability of the relevant product.
+      </p>
+
+      <h3>7. Refunds</h3>
+      <p>
+        Refund eligibility and processing for Google Play purchases are generally governed by
+        Google Play's applicable refund policies and any mandatory rights provided by law.
+        Nothing in these Terms limits any consumer right that cannot lawfully be excluded.
+      </p>
+
+      <h3>8. Acceptable use</h3>
+      <p>You agree not to:</p>
+      <ul>
+        <li>use the App for unlawful, fraudulent, abusive, or infringing purposes;</li>
+        <li>attempt to bypass purchase controls or obtain paid content without authorization;</li>
+        <li>interfere with, disrupt, overload, or compromise the App or services it depends on;</li>
+        <li>introduce malicious code or use the App to distribute harmful software;</li>
+        <li>attempt to gain unauthorized access to systems, services, or data; or</li>
+        <li>remove or obscure copyright, trademark, license, or attribution notices where doing so is prohibited.</li>
+      </ul>
+      <p>
+        Nothing in these Terms prohibits activity that applicable law expressly permits notwithstanding
+        a contractual restriction.
+      </p>
+
+      <h3>9. Intellectual property</h3>
+      <p>
+        Except for third-party materials identified below, the App's original source code,
+        user interface, visual design, original text, learning flow, branding, and other original
+        elements are owned by or licensed to the developer and are protected by applicable
+        intellectual-property laws.
+      </p>
+      <p>
+        You may not copy, reproduce, distribute, sell, license, or create unauthorized derivative
+        works from proprietary App materials except where permitted by applicable law or an applicable
+        open-source or third-party license.
+      </p>
+
+      <h3>10. Third-party content, open data, audio, and licenses</h3>
+      <p>
+        The final App contains third-party pronunciation audio, synthesized pronunciation audio,
+        dictionary/kanji data, fonts, software, and open-source components. These materials are not
+        claimed as original proprietary content of I Love Kanji and remain subject to their own
+        licenses and attribution requirements. Buying or downloading the App does not replace,
+        expand, or cancel rights that are granted directly by those third-party licenses.
+      </p>
+
+      <div class="license-list">
+        <div class="license-item">
+          <strong>Tofugu / WaniKani pronunciation audio — CC BY-SA 4.0</strong>
+          <p>
+            The final build contains human-recorded Japanese vocabulary pronunciation audio sourced
+            from the Tofugu / WaniKani Japanese Vocabulary Pronunciation Audio project. The source
+            project identifies the recordings as Japanese pronunciation audio and requires
+            attribution to Tofugu and WaniKani under the Creative Commons Attribution-ShareAlike
+            4.0 International license.
+          </p>
+          <p>
+            Attribution: <strong>Tofugu and WaniKani</strong><br>
+            Source:
+            <a href="https://github.com/tofugu/japanese-vocabulary-pronunciation-audio"
+               target="_blank" rel="noopener noreferrer">Japanese Vocabulary Pronunciation Audio</a>
+            ·
+            <a href="https://creativecommons.org/licenses/by-sa/4.0/"
+               target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a>
+          </p>
+        </div>
+
+        <div class="license-item">
+          <strong>Kanji Alive pronunciation audio — CC BY 4.0</strong>
+          <p>
+            The final build also contains human-recorded pronunciation media from Kanji Alive.
+            Kanji Alive's language data and media are made available under the Creative Commons
+            Attribution 4.0 International license, subject to the exclusions and special items
+            identified by Kanji Alive. The App uses pronunciation media, not Kanji Alive's
+            excluded mnemonic hints.
+          </p>
+          <p>
+            Attribution: <strong>Kanji Alive — Harumi Hibino Lory &amp; Arno Bosse</strong><br>
+            Source:
+            <a href="https://github.com/kanjialive/kanji-data-media"
+               target="_blank" rel="noopener noreferrer">Kanji Alive Data &amp; Media</a>
+            ·
+            <a href="https://kanjialive.com/credits/"
+               target="_blank" rel="noopener noreferrer">Kanji Alive Credits</a>
+            ·
+            <a href="https://creativecommons.org/licenses/by/4.0/"
+               target="_blank" rel="noopener noreferrer">CC BY 4.0</a>
+          </p>
+        </div>
+
+        <div class="license-item">
+          <strong>VOICEVOX / 四国めたん synthesized pronunciation audio</strong>
+          <p>
+            Some pronunciation clips in the final build are synthesized speech generated with
+            VOICEVOX CORE 0.17.0 using the VOICEVOX voice-model release 0.16.4,
+            <strong>四国めたん (Shikoku Metan), normal style</strong>. Only the resulting MP3
+            pronunciation output is bundled in the App; the VOICEVOX synthesis software and voice
+            model are not bundled as part of the App's runtime audio system.
+          </p>
+          <p>
+            <strong>Required credit: VOICEVOX:四国めたん</strong>
+          </p>
+          <p>
+            The applicable VOICEVOX software terms permit commercial and noncommercial use but
+            require credit and require generated audio to follow the applicable voice-library
+            terms. The 四国めたん / SSS voice-library terms likewise permit commercial and
+            noncommercial use with the required credit and subject to their common audio rules.
+          </p>
+          <p>
+            Official terms:
+            <a href="https://voicevox.hiroshiba.jp/term/"
+               target="_blank" rel="noopener noreferrer">VOICEVOX Software Terms</a>
+            ·
+            <a href="https://zunko.jp/con_ongen_kiyaku.html"
+               target="_blank" rel="noopener noreferrer">SSS / 四国めたん Voice Terms</a>
+            ·
+            <a href="https://github.com/VOICEVOX/voicevox_vvm/releases/tag/0.16.4"
+               target="_blank" rel="noopener noreferrer">VOICEVOX Voice Model Release 0.16.4</a>
+          </p>
+          <p>
+            The SSS common audio terms contain additional prohibited-use rules, including certain
+            political or religious uses, intentional false or misleading content, information-product
+            uses, specified adult-entertainment businesses, public-order/morality violations, and
+            use by anti-social forces. Those source terms are governed and interpreted under Japanese law.
+            The original Japanese terms control if there is any conflict with this summary.
+          </p>
+        </div>
+
+        <div class="license-item">
+          <strong>JMdict / KANJIDIC2 / EDRDG data</strong>
+          <p>
+            Japanese readings and dictionary-derived information in the project use JMdict,
+            KANJIDIC2, or related EDRDG resources. These resources are property of the
+            Electronic Dictionary Research and Development Group (EDRDG) and are used subject to
+            the applicable EDRDG licence and Creative Commons Attribution-ShareAlike requirements.
+            The final project's audio attribution records a 2026-09-07 JMdict/KANJIDIC2 snapshot
+            for reading verification.
+          </p>
+          <p>
+            Attribution and licence:
+            <a href="https://www.edrdg.org/"
+               target="_blank" rel="noopener noreferrer">EDRDG</a>
+            ·
+            <a href="https://www.edrdg.org/edrdg/licence.html"
+               target="_blank" rel="noopener noreferrer">EDRDG General Dictionary Licence Statement</a>
+          </p>
+        </div>
+
+        <div class="license-item">
+          <strong>Kanji catalog and vocabulary source data</strong>
+          <p>
+            Portions of the offline kanji catalog are derived from the
+            <a href="https://github.com/davidluzgouveia/kanji-data"
+               target="_blank" rel="noopener noreferrer">davidluzgouveia/kanji-data</a>
+            project, which is MIT-licensed and identifies KANJIDIC and other upstream resources.
+            Vocabulary examples are derived in part from
+            <a href="https://github.com/AnchorI/jlpt-kanji-dictionary"
+               target="_blank" rel="noopener noreferrer">AnchorI/jlpt-kanji-dictionary</a>,
+            with applicable upstream EDRDG/JMdict attribution retained.
+          </p>
+        </div>
+
+        <div class="license-item">
+          <strong>Godot Engine, Google Play Billing plugin, FSRS, and fonts</strong>
+          <p>
+            The App also incorporates Godot Engine, the Godot Google Play Billing integration,
+            FSRS-derived scheduling code, DejaVu fonts, and a Japanese font distributed under the
+            SIL Open Font License. Each component remains subject to its own copyright and license terms.
+          </p>
+        </div>
+      </div>
+
+      <div class="callout">
+        <p>
+          <strong>Audio reuse notice.</strong> The App's purchase price or installation does not
+          grant a separate blanket license to extract or redistribute bundled audio. Any reuse of
+          third-party audio must comply with the license or voice-library terms that apply to that
+          particular source. Nothing in these Terms limits rights that a third-party open-content
+          license grants directly to you.
+        </p>
+      </div>
+
+      <p>
+        References to third-party names, voices, products, projects, or trademarks are for
+        attribution and identification only. No third-party audio provider or voice owner is
+        represented as sponsoring, endorsing, or being affiliated with I Love Kanji.
+      </p>
+
+      <h3>11. Privacy</h3>
+      <p>
+        Your use of the App is also subject to the
+        <a href="#privacy-policy">I Love Kanji Privacy Policy</a>, which explains how information
+        is handled in connection with the App.
+      </p>
+
+      <h3>12. Updates, compatibility, and availability</h3>
+      <p>
+        We may update, modify, improve, replace, or discontinue App features from time to time.
+        Changes may be required because of operating-system updates, security issues, app-store
+        requirements, licensing constraints, service changes, or product decisions.
+      </p>
+      <p>
+        We do not guarantee that the App will remain compatible with every device, operating-system
+        version, or third-party service indefinitely.
+      </p>
+
+      <h3>13. Third-party services</h3>
+      <p>
+        Some App functionality depends on services operated by third parties, including Google Play
+        and Firebase. We do not control those third-party services and are not responsible for
+        outages, policy changes, account restrictions, payment failures, or other issues caused by
+        systems outside our reasonable control.
+      </p>
+
+      <h3>14. Disclaimer of warranties</h3>
+      <p>
+        To the maximum extent permitted by applicable law, the App is provided on an
+        <strong>"as is" and "as available"</strong> basis. We disclaim warranties not expressly
+        required by law, including implied warranties of merchantability, fitness for a particular
+        purpose, non-infringement, uninterrupted availability, and error-free operation.
+      </p>
+      <p>
+        Nothing in this section excludes or limits any warranty, guarantee, or consumer protection
+        that cannot lawfully be excluded.
+      </p>
+
+      <h3>15. Limitation of liability</h3>
+      <p>
+        To the maximum extent permitted by applicable law, the developer will not be liable for
+        indirect, incidental, special, consequential, exemplary, or punitive damages, or for loss
+        of data, profits, goodwill, opportunity, or business arising from or related to use of or
+        inability to use the App.
+      </p>
+      <p>
+        Where liability cannot be excluded but may lawfully be limited, total liability arising
+        out of or relating to the App will not exceed the amount you actually paid for the App or
+        the relevant in-app purchase giving rise to the claim during the twelve months before the
+        event giving rise to liability. This limitation does not apply where prohibited by law.
+      </p>
+
+      <h3>16. Suspension or termination</h3>
+      <p>
+        We may restrict access to App functionality where reasonably necessary to protect the App,
+        users, third-party services, intellectual-property rights, or legal compliance. Because the
+        App does not require a separate I Love Kanji account for normal use, many features operate
+        locally and do not involve a developer-controlled account that can be terminated.
+      </p>
+
+      <h3>17. Changes to these Terms</h3>
+      <p>
+        We may revise these Terms when the App, business model, platform requirements, or applicable
+        law changes. The current version will be posted on this page with an updated effective date.
+        Continued use of the App after revised Terms become effective may constitute acceptance where
+        permitted by applicable law.
+      </p>
+
+      <h3>18. Severability</h3>
+      <p>
+        If any provision of these Terms is found unenforceable or invalid, that provision will be
+        interpreted or limited to the minimum extent necessary, and the remaining provisions will
+        continue in effect to the extent permitted by law.
+      </p>
+
+      <h3>19. No waiver</h3>
+      <p>
+        A failure to enforce a provision of these Terms does not waive the right to enforce that
+        provision or any other provision later.
+      </p>
+
+      <h3>20. Entire agreement</h3>
+      <p>
+        These Terms, together with the Privacy Policy and any terms presented at the time of a
+        specific purchase, form the agreement governing your use of the App, subject to any
+        mandatory rights under applicable law and any applicable app-store terms.
+      </p>
+
+      <h3>21. Contact</h3>
+      <p>
+        For questions about these Terms or the App, contact:
+      </p>
+      <div class="contact-card">
+        <span class="label">Support</span>
+        <a href="mailto:support.artyomblack@gmail.com">support.artyomblack@gmail.com</a>
+      </div>
+
+      <p class="fine-print">
+        These Terms are a practical consumer-app legal draft based on the App's stated functionality.
+        They are not a substitute for legal advice tailored to a specific jurisdiction or business structure.
+      </p>
+    </article>
+
+    <footer>
+      <strong>Audio credit: VOICEVOX:四国めたん</strong><br>
+      © 2026 I Love Kanji. All rights reserved except third-party materials used under their respective licenses.
+    </footer>
+  </main>
+
+  <!-- CONTACT MODAL -->
+  <div class="modal-backdrop" id="chatModal" aria-hidden="true">
+    <section class="modal" role="dialog" aria-modal="true" aria-labelledby="contactTitle">
+      <div class="modal-top">
+        <div>
+          <h3 id="contactTitle">Contact I Love Kanji</h3>
+          <p>Prepare a support, legal, or privacy email.</p>
+        </div>
+        <button class="modal-close" id="closeChat" type="button" aria-label="Close contact form">×</button>
+      </div>
+
+      <form class="modal-form" id="contactForm">
+        <label for="senderEmail">Your Gmail / email</label>
+        <input
+          id="senderEmail"
+          name="email"
+          type="email"
+          inputmode="email"
+          autocomplete="email"
+          placeholder="you@gmail.com"
+          required
+        />
+
+        <label for="senderMessage">Message</label>
+        <textarea
+          id="senderMessage"
+          name="message"
+          placeholder="How can we help?"
+          required
+        ></textarea>
+
+        <div class="form-error" id="formError">Enter a valid email address and a message.</div>
+
+        <button class="submit-btn" type="submit">Continue to Gmail</button>
+        <p class="form-note">
+          For security, this website does not store your email or message. Your browser will open
+          Gmail with the message prepared for <strong>support.artyomblack@gmail.com</strong>;
+          you will review and send it from Gmail.
+        </p>
+      </form>
+    </section>
+  </div>
+
+  <script>
+    (() => {
+      const privacyPanel = document.getElementById("privacyPanel");
+      const termsPanel = document.getElementById("termsPanel");
+      const privacyNav = document.getElementById("privacyNav");
+      const termsNav = document.getElementById("termsNav");
+
+      function normalizeHash() {
+        const raw = (window.location.hash || "").toLowerCase();
+
+        if (raw === "#terms" || raw === "#tos" || raw === "#terms-of-service") {
+          return "#terms-of-service";
+        }
+
+        return "#privacy-policy";
+      }
+
+      function renderRoute() {
+        const route = normalizeHash();
+
+        if (window.location.hash !== route) {
+          history.replaceState(null, "", route);
+        }
+
+        const showTerms = route === "#terms-of-service";
+
+        privacyPanel.classList.toggle("active", !showTerms);
+        termsPanel.classList.toggle("active", showTerms);
+        privacyNav.classList.toggle("active", !showTerms);
+        termsNav.classList.toggle("active", showTerms);
+
+        privacyNav.setAttribute("aria-current", !showTerms ? "page" : "false");
+        termsNav.setAttribute("aria-current", showTerms ? "page" : "false");
+
+        document.title = showTerms
+          ? "I Love Kanji — Terms of Service"
+          : "I Love Kanji — Privacy Policy";
+
+        window.scrollTo({ top: 0, behavior: "auto" });
+      }
+
+      window.addEventListener("hashchange", renderRoute);
+      renderRoute();
+
+      const modal = document.getElementById("chatModal");
+      const openButton = document.getElementById("openChat");
+      const closeButton = document.getElementById("closeChat");
+      const form = document.getElementById("contactForm");
+      const emailInput = document.getElementById("senderEmail");
+      const messageInput = document.getElementById("senderMessage");
+      const error = document.getElementById("formError");
+
+      function openModal() {
+        modal.classList.add("open");
+        modal.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+        setTimeout(() => emailInput.focus(), 40);
+      }
+
+      function closeModal() {
+        modal.classList.remove("open");
+        modal.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+        error.style.display = "none";
+      }
+
+      openButton.addEventListener("click", openModal);
+      closeButton.addEventListener("click", closeModal);
+
+      modal.addEventListener("click", (event) => {
+        if (event.target === modal) closeModal();
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && modal.classList.contains("open")) {
+          closeModal();
+        }
+      });
+
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        const email = emailInput.value.trim();
+        const message = messageInput.value.trim();
+
+        if (!email || !message || !emailInput.checkValidity()) {
+          error.style.display = "block";
+          return;
+        }
+
+        error.style.display = "none";
+
+        const currentDocument =
+          normalizeHash() === "#terms-of-service" ? "Terms of Service" : "Privacy Policy";
+
+        const subject = "I Love Kanji Support";
+        const body =
+          "Sender email: " + email + "\n" +
+          "Page: " + currentDocument + "\n\n" +
+          "Message:\n" + message;
+
+        const gmailCompose =
+          "https://mail.google.com/mail/?view=cm&fs=1" +
+          "&to=" + encodeURIComponent("support.artyomblack@gmail.com") +
+          "&su=" + encodeURIComponent(subject) +
+          "&body=" + encodeURIComponent(body);
+
+        window.open(gmailCompose, "_blank", "noopener,noreferrer");
+      });
+    })();
+  </script>
+</body>
+</html>
